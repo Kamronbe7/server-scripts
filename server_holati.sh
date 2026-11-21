@@ -7,7 +7,7 @@ echo "Vaqt: $hozir"
 
 echo "--CPU--"
 yuklanish=$(uptime | awk -F'load average: ' '{print $2}' | cut -d, -f1 | tr -d ' ')
-yadrolar=4(nproc)
+yadrolar=$(nproc)
 echo "Yuklanish (1 daqiqa): $yuklanish, yadrolar soni: $yadrolar"
 echo
 
