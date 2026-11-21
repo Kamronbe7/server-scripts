@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodni yuklab olish
+        uses: actions/checkout@v4
+
+      - name: Muhit haqida
+        run: |
+          echo "Runner: $(uname -a)"
+          echo "Commit: ${{ github.sha }}"
+          echo "Muallif: ${{ github.actor }}"
+
+      - name: ShellCheck
+        run: shellcheck *.sh
